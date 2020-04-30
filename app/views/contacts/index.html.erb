@@ -1,0 +1,6 @@
+<div class = "contents row">
+  <% @contacts.each do |contact| %>
+    <%= render partial: "contact", locals: { contact: contact} %>
+  <% end %>
+  <%= paginate(@contacts) %>
+</div>

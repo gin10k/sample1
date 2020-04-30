@@ -1,0 +1,25 @@
+<div class="content_post" style="background-image: url(<%= contact.image %>);">
+  <div class="more">
+    <% if user_signed_in? && current_user.id == contact.user_id %>
+        <!--ログイン中かつ投稿者IDが同じなら表示される↓-->
+      <span><%= image_tag 'arrow_top.png' %></span>
+        <ul class="more_list">
+          <li>
+            <%= link_to '詳細', "/contacts/#{contact.id}", method: :get%>
+          </li>
+          <li>
+            <%= link_to '編集', "/contacts/#{contact.id}/edit", method: :get %>
+          </li>
+          <li>
+            <%= link_to '削除', "/contacts/#{contact.id}", method: :delete %>
+          </li>
+        </ul>
+    <% end %>
+  </div>
+  <%= simple_format(contact.text)%>
+  <span class="name">
+    <a href="/users/<%= contact.user.id %>">
+      <span>投稿者</span><%= contact.user.nickname %>
+    </a>
+  </span>
+</div>
