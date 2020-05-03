@@ -4,9 +4,7 @@
     <h3>
       編集ページ
     </h3>
-    <%= form.text_field :image, placeholder: "画像URL" %>
-    <%= form.text_area :text, placeholder: "メッセージ入力" , rows: "10" %>
-    <%= form.submit "更新する" %>
+      <%= render partial: "form", locals: { form: form } %>
     <% end %>
   </div>
 </div>
