@@ -23,6 +23,8 @@ class ContactsController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
+    @comments = @contact.comments.includes(:user)
   end
 
 
