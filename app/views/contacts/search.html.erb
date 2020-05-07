@@ -2,11 +2,8 @@
   <%= form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" %>
   <%= form.submit "検索", class: "search-btn" %>
 <% end %>
-<div class = "contents row">
+<div class="contents row">
   <% @contacts.each do |contact| %>
-    <%= render partial: "contact", locals: { contact: contact} %>
+    <%= render partial: "contact", locals: { contact: contact } %>
   <% end %>
-  <div class = "pagenate">
-    <%= paginate(@contacts) %>
-  </div>
 </div>

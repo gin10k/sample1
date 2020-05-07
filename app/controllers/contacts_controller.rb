@@ -1,6 +1,6 @@
 class ContactsController < ApplicationController
   before_action :set_contact, only: [:edit, :show]
-  before_action :move_to_index, except: [:index]#リファクタリング+index以外は未ログインでは見れない
+  before_action :move_to_index, except: [:index, :show, :search]#リファクタリング+index,show,search以外は未ログインでは見れない
 
   def index
     @contacts = Contact.includes(:user).order("created_at DESC").page(params[:page]).per(5)
@@ -27,6 +27,9 @@ class ContactsController < ApplicationController
     @comments = @contact.comments.includes(:user)
   end
 
+  def search
+    @contacts = Contact.search(params[:keyword])
+  end
 
   def destroy
     contact = Contact.find(params[:id])
