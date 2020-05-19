@@ -39,7 +39,8 @@ $white: white;
 
 body,html {
   height: 100%;
-  background-color: $lightGray;
+  background-color: rgb(50, 50, 173);
+
 }
 
 body {
@@ -121,7 +122,7 @@ h1,h2,h3,h4,h5,h6 {
 header.header {
   @include basePadding;
   border-bottom: 1px solid $gray;
-  background-color: #fff;
+  background-color: yellow;
   position: fixed;
   top: 0;
   left: 0;
@@ -214,6 +215,7 @@ div.contents.row {
   h2 {
     @include boxBase(20px 0, 0);
     font-weight: normal;
+    width: 400px;
     strong {
       font-weight: bold;
       padding-right: 5px;
@@ -298,7 +300,7 @@ div.contents.row {
       font-size: 20px;
       z-index: 2;
       font-weight: bold;
-      text-shadow: 0 0 2px #000, 0 0 1px #000, 0 0 1px #000;
+      text-shadow: 0 0 5px #000, 0 0 5px #000, 0 0 5px #000;
     }
     span.name {
       position: absolute;
